@@ -1,0 +1,24 @@
+@url=http://localhost:3000
+@api_key={{$dotenv API_KEY}}
+
+GET {{url}}
+X-API-Key: {{api_key}}
+
+
+###
+
+POST {{url}}
+X-API-Key: {{api_key}}
+X-Url: https://api.printables.com/graphql/
+Content-Type: application/json
+
+{"query":" query OpenCompetitions($competitionStatus: CompetitionStatusEnum, $limit: Int, $offset: Int) { competitions( competitionStatus: $competitionStatus limit: $limit offset: $offset ) { id slug name teaserImageFilePath description openFrom printsCount winnerPrize openTo entryLink winnersLink printDateValidation signedModelsCount maxModelsPerUser __typename}}",
+"variables":{"competitionStatus":"closed","limit":10,"offset":0}}
+
+###
+
+POST https://api.printables.com/graphql/
+Content-Type: application/json
+
+{"query":" query OpenCompetitions($competitionStatus: CompetitionStatusEnum, $limit: Int, $offset: Int) { competitions( competitionStatus: $competitionStatus limit: $limit offset: $offset ) { id slug name teaserImageFilePath description openFrom printsCount winnerPrize openTo entryLink winnersLink printDateValidation signedModelsCount maxModelsPerUser __typename}}",
+"variables":{"competitionStatus":"closed","limit":10,"offset":0}}
