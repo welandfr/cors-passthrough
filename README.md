@@ -10,4 +10,3 @@ Authorization: my-secret-key
 X-Url: https://cors-blocking-api.com/
 ```
 
-- 
